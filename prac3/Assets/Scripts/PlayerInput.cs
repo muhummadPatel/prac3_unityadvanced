@@ -28,11 +28,11 @@ public class PlayerInput : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
-		Vector3 rot = new Vector3(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
-		rot += transform.rotation.eulerAngles;
-		transform.rotation = Quaternion.Euler(rot);
-	}
+//	void Update () {
+//		Vector3 rot = new Vector3(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
+//		rot += transform.rotation.eulerAngles;
+//		transform.rotation = Quaternion.Euler(rot);
+//	}
 	
 	void FixedUpdate() {
 		float h = Input.GetAxisRaw ("Horizontal");

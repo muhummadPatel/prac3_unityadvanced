@@ -3,20 +3,22 @@ using System.Collections;
 
 public class ThirdPersonCamera : MonoBehaviour {
 
-	public Transform target;
-	public float smoothing = 5f;
-	
+	public GameObject target;
+	public float rotateSpeed = 5;
 	Vector3 offset;
 	
-	void Start () {
-		offset = transform.position - target.position;
+	void Start() {
+		offset = target.transform.position - transform.position;
 	}
 	
-	void FixedUpdate () {
-		//uncomment if slow
-		//if (camera.enabled) {
-		Vector3 targetCamPos = target.position + offset;
-		transform.position = Vector3.Lerp (transform.position, targetCamPos, smoothing * Time.deltaTime);
-		//}
+	void Update() {
+		float horizontal = Input.GetAxis("Mouse X") * rotateSpeed;
+		target.transform.Rotate(0, horizontal, 0);
+		
+		float desiredAngle = target.transform.eulerAngles.y;
+		Quaternion rotation = Quaternion.Euler(0, desiredAngle, 0);
+		transform.position = target.transform.position - (rotation * offset);
+		
+		transform.LookAt(target.transform);
 	}
 }
