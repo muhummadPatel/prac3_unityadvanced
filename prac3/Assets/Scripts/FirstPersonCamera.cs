@@ -17,10 +17,12 @@ public class FirstPersonCamera : MonoBehaviour {
 	
 	void Update ()
 	{
+		//pitch
 		Vector3 rot = new Vector3(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
 		rot += player.transform.rotation.eulerAngles;
 		player.transform.rotation = Quaternion.Euler(rot);
 
+		//yaw
 		rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
 		rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
 		

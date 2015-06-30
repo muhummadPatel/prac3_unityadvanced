@@ -65,8 +65,10 @@ public class PlayerInput : MonoBehaviour {
 
 		foreach (GameObject cameraObject in cams) {
 			cameraObject.camera.enabled = false;
+			cameraObject.tag = "Camera";
 		}
 
 		cams[view].camera.enabled = true;
+		cams[view].tag = "MainCamera";
 	}
 }
