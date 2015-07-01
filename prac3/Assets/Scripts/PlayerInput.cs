@@ -5,7 +5,7 @@ public class PlayerInput : MonoBehaviour {
 
 	public float speed = 6f;
 
-	public int view = 1;
+	public int view;
 
 	public float sensitivityX = 15F;
 	public float sensitivityY = 15F;
@@ -15,7 +15,6 @@ public class PlayerInput : MonoBehaviour {
 	
 	public float minimumY = -60F;
 	public float maximumY = 60F;
-	float rotationY = 0F;
 	
 	Vector3 movement;
 	Animator anim;
@@ -56,7 +55,7 @@ public class PlayerInput : MonoBehaviour {
 	}
 
 	void UpdateCam (int view){
-		view = Mathf.Clamp (view, 0, 2);
+		//view = Mathf.Clamp (view, 0, 2);
 
 		GameObject[] cams = new GameObject[3];
 		cams[0] = GameObject.Find ("Orbit Camera");
