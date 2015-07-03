@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AimAtCursor : MonoBehaviour {
 	public GameObject bulletObject;
-	public GameObject aimCursor;
+//	public GameObject aimCursor;
 	public Transform fireFrom;
 	public float shotSpeed = 20.0f;
 	
@@ -17,9 +17,9 @@ public class AimAtCursor : MonoBehaviour {
 		} else {
 			shootToward = mouseRay.origin + mouseRay.direction * 30.0f;
 		}
-		if(aimCursor != null) {
-			aimCursor.transform.position = shootToward;
-		}
+//		if(aimCursor != null) {
+//			aimCursor.transform.position = shootToward;
+//		}
 		transform.LookAt(shootToward);
 		
 		if( Input.GetMouseButtonDown(0) )

@@ -5,6 +5,7 @@ public class TakeDamage : MonoBehaviour {
 
 	//public GameObject managerObject; // dont set this in the prefab
 
+	public ParticleSystem explosion;
 	Manager manager;
 
 	// Use this for initialization
@@ -22,6 +23,8 @@ public class TakeDamage : MonoBehaviour {
 		//Debug.Log ("ded");
 
 		manager.incrementDestroyed ();
+
+		Instantiate (explosion, transform.position, Quaternion.identity);
 
 		Destroy (this.gameObject);
 	}

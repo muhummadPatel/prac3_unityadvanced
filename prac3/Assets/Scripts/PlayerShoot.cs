@@ -3,10 +3,11 @@ using System.Collections;
 
 public class PlayerShoot : MonoBehaviour {
 
-	LineRenderer gunLine;
 	float timer = 0f;
 	Ray shootRay;
 	RaycastHit shootHit;
+//	LineRenderer gunLine;
+	ParticleSystem muzzleFlash; 
 	public float timeBetweenBullets = 0.5f;
 	public float effectsDisplayTime = 0.5f;
 	public float range = 150f;
@@ -14,7 +15,8 @@ public class PlayerShoot : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gunLine = GetComponent <LineRenderer> ();
+//		gunLine = GetComponent<LineRenderer> ();
+		muzzleFlash = GetComponent<ParticleSystem> ();
 	}
 	
 	// Update is called once per frame
@@ -33,7 +35,7 @@ public class PlayerShoot : MonoBehaviour {
 	}
 
 	public void DisableEffects (){
-		gunLine.enabled = false;
+		//gunLine.enabled = false;
 		//gunLight.enabled = false;
 	}
 	
@@ -45,24 +47,24 @@ public class PlayerShoot : MonoBehaviour {
 		
 //		gunLight.enabled = true;
 		
-//		gunParticles.Stop ();
-//		gunParticles.Play ();
-		
-		gunLine.enabled = true;
-		gunLine.SetPosition (0, transform.position);
+		muzzleFlash.Stop ();
+		muzzleFlash.Play ();
+//		
+//		gunLine.enabled = true;
+//		gunLine.SetPosition (0, transform.position);
 
 
 
 		shootRay.origin = transform.position;
 		shootRay.direction = transform.forward;
 		
-		if(Physics.Raycast (shootRay, out shootHit, range))
-		{
-			gunLine.SetPosition (1, shootHit.point);
-		}
-		else
-		{
-			gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
-		}
+//		if(Physics.Raycast (shootRay, out shootHit, range))
+//		{
+//			gunLine.SetPosition (1, shootHit.point);
+//		}
+//		else
+//		{
+//			gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
+//		}
 	}
 }

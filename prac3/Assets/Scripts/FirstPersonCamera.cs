@@ -4,14 +4,14 @@ using System.Collections;
 public class FirstPersonCamera : MonoBehaviour {
 
 	public GameObject player;
-	public float sensitivityX = 15F;
-	public float sensitivityY = 15F;
+	public float sensitivityX = 2F;
+	public float sensitivityY = 2F;
 	
 	public float minimumX = -360F;
 	public float maximumX = 360F;
 	
-	public float minimumY = -60F;
-	public float maximumY = 60F;
+	public float minimumY = -30F;
+	public float maximumY = 30F;
 	
 	float rotationY = 0F;
 
