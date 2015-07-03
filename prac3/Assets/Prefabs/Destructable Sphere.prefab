@@ -12,6 +12,7 @@ GameObject:
   - 135: {fileID: 13588304}
   - 23: {fileID: 2388304}
   - 54: {fileID: 5488304}
+  - 114: {fileID: 11406232}
   m_Layer: 0
   m_Name: Destructable Sphere
   m_TagString: Destructable
@@ -73,6 +74,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &11406232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81005dc56640b4ec59ca0f66dd84c22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 19800008, guid: 5f4c2db6e357c41e68ede7f76b690b0a, type: 2}
 --- !u!135 &13588304
 SphereCollider:
   m_ObjectHideFlags: 1
