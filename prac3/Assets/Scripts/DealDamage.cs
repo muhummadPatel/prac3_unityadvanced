@@ -14,7 +14,7 @@ public class DealDamage : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision){
-		Debug.Log (collision.collider.gameObject.tag);
+		//Debug.Log (collision.collider.gameObject.tag);
 		if(collision.collider.gameObject.tag == "Destructable"){
 
 			TakeDamage damage = collision.collider.GetComponent<TakeDamage>();

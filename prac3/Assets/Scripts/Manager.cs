@@ -4,10 +4,11 @@ using System.Collections;
 public class Manager : MonoBehaviour {
 
 	public GameObject player;
+	public Material[] materials;
 	public GameObject[] destructables;
 	public int maxDestructablesInScene = 5;
 	public int totalDestructables = 7;
-	public float spawnDelay = 5.0f;
+	public float spawnDelay = 0.5f;
 	public float spawnHeight = 3.0f;
 	public float spawnRadius = 25.0f;
 
@@ -15,27 +16,41 @@ public class Manager : MonoBehaviour {
 	int deployed = 0;
 	float spawnTimer = 0f;
 
+	public void decrementDeployed(){
+		deployed--;
+	}
+
+	public void incrementDestroyed(){
+		destroyed++;
+		Debug.Log ("destroyed " + destroyed);
+	}
+
 	// Use this for initialization
 	void Start () {
-	
+		for (int i = 0; i < maxDestructablesInScene; i++) {
+			spawnDestructable ();
+			deployed++;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		int current = deployed - destroyed;
-		if (deployed < totalDestructables && current < maxDestructablesInScene) {
+		//Debug.Log ("deployed " + deployed + " current " + current);
+		if (deployed < totalDestructables && spawnTimer >= spawnDelay && current < maxDestructablesInScene){
 			spawnDestructable();
 
 			spawnTimer = 0;
 			deployed++;
-			Debug.Log(deployed);
+			//Debug.Log(deployed);
 		}
 
 		spawnTimer += Time.deltaTime;
 	}
 
 	void spawnDestructable(){
-		int index = Random.Range (0, destructables.Length-1);
+		int destrIndex = Random.Range (0, destructables.Length-1);
+		int matIndex = Random.Range (0, materials.Length-1);
 
 		Vector3 centre = player.transform.position;
 		float[] randCoords = {
@@ -47,7 +62,8 @@ public class Manager : MonoBehaviour {
 		randomLocation.y = spawnHeight;
 
 		//Spawn itself
-		GameObject go = (GameObject)Instantiate(destructables[index], randomLocation, Quaternion.identity); //TODO: random rotation?
+		GameObject go = (GameObject)Instantiate(destructables[destrIndex], randomLocation, Quaternion.identity); //TODO: random rotation?
+		go.renderer.material = materials [matIndex];
 		//float grav = 9.8f;
 		//go.rigidbody.velocity = Vector3.down.normalized * grav;
 	}
