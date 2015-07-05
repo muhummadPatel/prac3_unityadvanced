@@ -10,7 +10,12 @@ public class AimAtCursor : MonoBehaviour {
 	void Update () {
 		RaycastHit rhInfo;
 		Vector3 shootToward;
-		Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+		//Dont really need this line
+		Vector3 mousePos = Input.mousePosition;
+		//Debug.Log (mousePos + " " + Screen.height);
+
+		Ray mouseRay = Camera.main.ScreenPointToRay(mousePos);
 		
 		if(Physics.Raycast(mouseRay, out rhInfo, 30.0f)) {
 			shootToward = rhInfo.point;
