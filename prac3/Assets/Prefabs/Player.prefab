@@ -32,7 +32,6 @@ GameObject:
   - 114: {fileID: 11480032}
   - 199: {fileID: 19980034}
   - 198: {fileID: 19880034}
-  - 120: {fileID: 12080034}
   m_Layer: 0
   m_Name: GunBarrelEnd
   m_TagString: Untagged
@@ -51,6 +50,8 @@ GameObject:
   - 95: {fileID: 9580034}
   - 54: {fileID: 5480034}
   - 114: {fileID: 11480034}
+  - 114: {fileID: 11486324}
+  - 114: {fileID: 11475008}
   - 136: {fileID: 13680034}
   m_Layer: 0
   m_Name: Player
@@ -231,6 +232,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11475008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5575185c2afc84dfc88ad1a4e6a0d280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view: 0
 --- !u!114 &11480028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,9 +287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f1b0f3de8d543898b06839032682fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletObject: {fileID: 196298, guid: ae4de37c84f884c4bbfa7b134deeb2c6, type: 2}
+  bulletObject: {fileID: 191030, guid: 71e84c291aeca432a935a538e91658f1, type: 2}
   fireFrom: {fileID: 480028}
-  shotSpeed: 20
+  shotSpeed: 50
 --- !u!114 &11480034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -288,41 +301,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36304f8fa0c44c51b7a18c73d7ce4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  view: 2
---- !u!120 &12080034
-LineRenderer:
+--- !u!114 &11486324
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180028}
+  m_GameObject: {fileID: 180030}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 487a4d38e93d440a9baf31833c723b59, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
-  m_Parameters:
-    startWidth: .5
-    endWidth: .5
-    m_StartColor:
-      serializedVersion: 2
-      rgba: 4294967295
-    m_EndColor:
-      serializedVersion: 2
-      rgba: 4294967295
-  m_UseWorldSpace: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75a7f447688ff45cba20d06e61976157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
 --- !u!124 &12480034
 Behaviour:
   m_ObjectHideFlags: 1

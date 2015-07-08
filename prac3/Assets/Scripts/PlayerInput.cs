@@ -3,18 +3,14 @@ using System.Collections;
 
 public class PlayerInput : MonoBehaviour {
 
-	public float speed = 6f;
-
-	public int view;
-	
 	Vector3 movement;
-	Animator anim;
-	Rigidbody playerRigidbody;
+	//Animator anim;
+	PlayerMovement playerMovement;
+	PlayerView playerView;
 
 	void Start() {
-		playerRigidbody = GetComponent<Rigidbody> ();
-
-		UpdateCam (view);
+		playerMovement = GetComponent<PlayerMovement> ();
+		playerView = GetComponent <PlayerView> ();
 	}
 
 	// Update is called once per frame
@@ -24,41 +20,15 @@ public class PlayerInput : MonoBehaviour {
 //		transform.rotation = Quaternion.Euler(rot);
 //	}
 	
-	void FixedUpdate() {
+	void Update() {
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
 
-
-		
-		Move (h, v);
-		UpdateCam (view);
-	}
-
-	void Move (float h, float v) {
-		movement.Set (h, 0f, v);
-		movement = movement.normalized * speed * Time.deltaTime;
-
-		//Debug.Log (transform.rotation.eulerAngles.y);
-		float yOff = transform.rotation.eulerAngles.y;
-		movement = Quaternion.AngleAxis(yOff, Vector3.up) * movement;
-		
-		playerRigidbody.MovePosition (transform.position + movement);
-	}
-
-	void UpdateCam (int view){
-		//view = Mathf.Clamp (view, 0, 2);
-
-		GameObject[] cams = new GameObject[3];
-		cams[0] = GameObject.Find ("Orbit Camera");
-		cams[1] = GameObject.Find ("Third Person Camera");
-		cams[2] = GameObject.Find ("First Person Camera");
-
-		foreach (GameObject cameraObject in cams) {
-			cameraObject.camera.enabled = false;
-			cameraObject.tag = "Camera";
+		if (Input.GetKeyUp(KeyCode.V)) {
+			playerView.toggleViews();
+			//Debug.Log ("Pressed");
 		}
 
-		cams[view].camera.enabled = true;
-		cams[view].tag = "MainCamera";
+		playerMovement.move (h, v);
 	}
 }
