@@ -5,7 +5,7 @@ TagManager:
   tags:
   - Camera
   - Destructable
-  - ' Bullet'
+  - Bullet
   - Manager
   - 
   Builtin Layer 0: Default
