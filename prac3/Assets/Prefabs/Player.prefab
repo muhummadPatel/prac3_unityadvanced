@@ -779,7 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5575185c2afc84dfc88ad1a4e6a0d280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: 0
+  view: 1
   heightStep: .5
   radiusStep: .5
 --- !u!114 &11467910

@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Manager : MonoBehaviour {
 
 	GameObject player;
+	public Text scoreText;
 	public Material[] materials;
 	public GameObject[] destructables;
 	public int maxDestructablesInScene = 5;
@@ -22,6 +24,7 @@ public class Manager : MonoBehaviour {
 
 	public void incrementDestroyed(){
 		destroyed++;
+		scoreText.text = "" + destroyed;
 		Debug.Log ("destroyed " + destroyed);
 	}
 

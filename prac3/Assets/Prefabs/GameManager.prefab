@@ -39,6 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 249b226aa912b4b8bbf649dd0c3d23a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
   materials:
   - {fileID: 2100000, guid: 687e14c0ee6984329a7b69838dd4f267, type: 2}
   - {fileID: 2100000, guid: b55cf44446d2a4f1a879797a3f9d9f91, type: 2}

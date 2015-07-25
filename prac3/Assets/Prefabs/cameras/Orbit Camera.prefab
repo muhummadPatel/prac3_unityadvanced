@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   step: .5
-  distance: 4
-  height: 1.5
+  distance: 12
+  height: 7
 --- !u!124 &12478650
 Behaviour:
   m_ObjectHideFlags: 1
