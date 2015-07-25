@@ -3,9 +3,10 @@ using System.Collections;
 
 public class Shoot : MonoBehaviour {
 
-	public float range = 50.0f;
+	public float shotLineRange = 100.0f;
 	public float recoilTime = 0.15f;
 	public float shotLineDuration = 0.01f;
+	public GameObject crossHair;
 
 	float lastShot = 0.0f;
 
@@ -23,8 +24,17 @@ public class Shoot : MonoBehaviour {
 		lastShot += Time.deltaTime;
 
 		if (lastShot >= recoilTime && Input.GetButtonUp ("Fire1")) {
-			singleShot();
+			singleShot ();
 			lastShot = 0.0f;
+		} else {
+			RaycastHit hit;
+			Vector3 hitPoint;
+			if (Physics.Raycast (transform.position, transform.forward, out hit, shotLineRange)) {
+				hitPoint = hit.point;	
+			} else {
+				hitPoint = transform.position + (transform.forward * shotLineRange);
+			}
+			crossHair.transform.position = hitPoint;
 		}
 
 		if (lastShot >= shotLineDuration) {
@@ -42,17 +52,19 @@ public class Shoot : MonoBehaviour {
 		
 		RaycastHit hit;
 		Vector3 hitPoint;
-		if (Physics.Raycast (transform.position, transform.forward, out hit, range)) {
+		if (Physics.Raycast (transform.position, transform.forward, out hit, shotLineRange)) {
 			hitPoint = hit.point;
 			if (hit.collider.gameObject.tag == "Destructable") {
 				TakeDamage damage = hit.collider.gameObject.GetComponent<TakeDamage> ();
 				damage.explode ();
 			}			
 		} else {
-			hitPoint = transform.position + (transform.forward * 50);
+			hitPoint = transform.position + (transform.forward * shotLineRange);
 		}
 
 		shotLine.SetPosition (1, hitPoint);
+
+		crossHair.transform.position = hitPoint;
 	}
 
 }
