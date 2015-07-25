@@ -24,8 +24,9 @@ public class TakeDamage : MonoBehaviour {
 
 		manager.incrementDestroyed ();
 
-		Instantiate (explosion, transform.position, Quaternion.identity);
+		ParticleSystem explosionObj = (ParticleSystem) Instantiate (explosion, transform.position, Quaternion.identity);
 
+		Destroy (explosionObj, 5.0f);
 		Destroy (this.gameObject);
 	}
 }

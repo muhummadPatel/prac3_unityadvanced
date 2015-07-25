@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Lifetime : MonoBehaviour {
 
-	public float timeToLive = 10.0f;
+	public float timeToLive = 5.0f;
 
 	float timeAlive = 0.0f;
 

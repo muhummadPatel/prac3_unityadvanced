@@ -9,20 +9,14 @@ public class PlayerMovement : MonoBehaviour {
 	Rigidbody playerRigidbody;
 	Animator playerAnimator;
 
-	bool touchingObstacle;
-
 	// Use this for initialization
 	void Start () {
 		playerRigidbody = GetComponent<Rigidbody> ();
 		playerAnimator = GetComponent<Animator> ();
-		touchingObstacle = false;
 	}
 	
 	// Update is called once per physics step
 	void FixedUpdate () {
-		if (touchingObstacle) {
-			movement = Vector3.zero;
-		}
 			movement = movement.normalized * speed * Time.deltaTime;
 		
 			//Debug.Log (transform.rotation.eulerAngles.y);
