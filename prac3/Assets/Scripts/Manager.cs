@@ -27,6 +27,8 @@ public class Manager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Screen.lockCursor = true;
+
 		player = GameObject.FindGameObjectWithTag ("Player");
 
 		for (int i = 0; i < maxDestructablesInScene; i++) {
