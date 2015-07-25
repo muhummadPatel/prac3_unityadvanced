@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Manager : MonoBehaviour {
 
-	public GameObject player;
+	GameObject player;
 	public Material[] materials;
 	public GameObject[] destructables;
 	public int maxDestructablesInScene = 5;
@@ -27,6 +27,8 @@ public class Manager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.FindGameObjectWithTag ("Player");
+
 		for (int i = 0; i < maxDestructablesInScene; i++) {
 			spawnDestructable ();
 			deployed++;
