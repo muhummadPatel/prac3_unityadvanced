@@ -11,7 +11,6 @@ GameObject:
   - 20: {fileID: 2078650}
   - 124: {fileID: 12478650}
   - 92: {fileID: 9278650}
-  - 81: {fileID: 8178650}
   - 114: {fileID: 11478650}
   m_Layer: 0
   m_Name: Orbit Camera
@@ -64,13 +63,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
---- !u!81 &8178650
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178650}
-  m_Enabled: 0
 --- !u!92 &9278650
 Behaviour:
   m_ObjectHideFlags: 1
