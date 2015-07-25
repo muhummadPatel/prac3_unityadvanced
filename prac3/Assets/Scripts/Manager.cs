@@ -59,7 +59,8 @@ public class Manager : MonoBehaviour {
 		int destrIndex = Random.Range (0, destructables.Length);
 		int matIndex = Random.Range (0, materials.Length);
 
-		Vector3 centre = player.transform.position;
+		Vector3 centre = Vector3.zero;
+	
 		float[] randCoords = {
 								Random.Range(centre.x - spawnRadius, centre.x + spawnRadius),
 								spawnHeight,
