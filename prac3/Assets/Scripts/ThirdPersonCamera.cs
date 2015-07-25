@@ -3,11 +3,12 @@ using System.Collections;
 
 public class ThirdPersonCamera : MonoBehaviour {
 
-	public GameObject target;
+	GameObject target;
 	public float rotateSpeed = 5;
 	Vector3 offset;
 	
 	void Start() {
+		target = GameObject.FindGameObjectWithTag ("Player");
 		offset = target.transform.position - transform.position;
 	}
 	

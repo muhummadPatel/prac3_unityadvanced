@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FirstPersonCamera : MonoBehaviour {
 
-	public GameObject player;
+	GameObject player;
 	public float sensitivityX = 2F;
 	public float sensitivityY = 2F;
 	
@@ -15,9 +15,11 @@ public class FirstPersonCamera : MonoBehaviour {
 	
 	float rotationY = 0F;
 
-	
-	void Update ()
-	{
+	void Start () {
+		player = GameObject.FindGameObjectWithTag ("Player");
+	}
+
+	void Update () {
 
 		//pitch
 		Vector3 rot = new Vector3(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
