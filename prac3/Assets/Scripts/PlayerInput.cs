@@ -29,6 +29,22 @@ public class PlayerInput : MonoBehaviour {
 			//Debug.Log ("Pressed");
 		}
 
+		if (Input.GetKey (KeyCode.Period)) {
+			//increase height of orbit cam
+			playerView.adjustOrbitCamHeight (1);
+		} else if (Input.GetKey (KeyCode.Comma)) {
+			//decrease orbit cam height
+			playerView.adjustOrbitCamHeight(-1);
+		}
+
+		if (Input.GetKey (KeyCode.K)) {
+			//increase orbit cam radius
+			playerView.adjustOrbitCamRadius (1);
+		} else if (Input.GetKey (KeyCode.L)) {
+			//decrease orbit cam radius
+			playerView.adjustOrbitCamRadius(-1);
+		}
+
 		playerMovement.move (h, v);
 	}
 }

@@ -44,4 +44,12 @@ public class OrbitingCamera : MonoBehaviour {
 		transform.rotation = rot;
 		//}
 	}
+
+	public void adjustHeight(float delta) {
+		height += delta;
+	}
+
+	public void adjustRadius (float delta) {
+		distance += delta;
+	}
 }
