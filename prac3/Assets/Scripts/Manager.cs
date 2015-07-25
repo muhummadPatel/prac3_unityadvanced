@@ -6,6 +6,7 @@ public class Manager : MonoBehaviour {
 
 	GameObject player;
 	public Text scoreText;
+	public GameObject helpScreen;
 	public Material[] materials;
 	public GameObject[] destructables;
 	public int maxDestructablesInScene = 5;
@@ -78,5 +79,9 @@ public class Manager : MonoBehaviour {
 
 	public void restart () {
 		Application.LoadLevel ("Level_01");
+	}
+
+	public void toggleHelpScreen (bool state) {
+		helpScreen.SetActive (state);
 	}
 }
