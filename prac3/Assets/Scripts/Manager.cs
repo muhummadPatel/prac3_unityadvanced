@@ -75,4 +75,8 @@ public class Manager : MonoBehaviour {
 		//float grav = 9.8f;
 		//go.rigidbody.velocity = Vector3.down.normalized * grav;
 	}
+
+	public void restart () {
+		Application.LoadLevel ("Level_01");
+	}
 }

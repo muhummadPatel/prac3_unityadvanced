@@ -4,11 +4,15 @@ using System.Collections;
 public class PlayerInput : MonoBehaviour {
 
 	Vector3 movement;
+	Manager manager;
 	//Animator anim;
 	PlayerMovement playerMovement;
 	PlayerView playerView;
 
 	void Start() {
+		GameObject managerObject = GameObject.FindGameObjectWithTag ("Manager");
+		manager = managerObject.GetComponent<Manager> ();
+
 		playerMovement = GetComponent<PlayerMovement> ();
 		playerView = GetComponent <PlayerView> ();
 	}
@@ -43,6 +47,10 @@ public class PlayerInput : MonoBehaviour {
 		} else if (Input.GetKey (KeyCode.L)) {
 			//decrease orbit cam radius
 			playerView.adjustOrbitCamRadius(-1);
+		}
+
+		if (Input.GetKeyUp (KeyCode.R)) {
+			manager.restart ();
 		}
 
 		playerMovement.move (h, v);
