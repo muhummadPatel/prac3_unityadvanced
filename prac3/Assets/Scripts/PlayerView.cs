@@ -6,13 +6,16 @@ public class PlayerView : MonoBehaviour {
 	//change this to private for final build
 	public int view;
 
+	GameObject[] cams;
+
 	// Use this for initialization
 	void Start () {
+		cams = new GameObject[3];
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		GameObject[] cams = new GameObject[3];
+
 		cams[0] = GameObject.Find ("Orbit Camera");
 		cams[1] = GameObject.Find ("Third Person Camera");
 		cams[2] = GameObject.Find ("First Person Camera");
@@ -27,8 +30,10 @@ public class PlayerView : MonoBehaviour {
 	}
 
 	public void toggleViews (){
-		//TODO: fix this! manually clamp to range and wrap around
-		//wrapping around so we cant use clamp
-		Mathf.Clamp(++view, 0, 2);
+		view++;
+
+		if (view == cams.Length) {
+			view = 0;
+		}
 	}
 }
