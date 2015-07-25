@@ -39,7 +39,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 249b226aa912b4b8bbf649dd0c3d23a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   materials:
   - {fileID: 2100000, guid: 687e14c0ee6984329a7b69838dd4f267, type: 2}
   - {fileID: 2100000, guid: b55cf44446d2a4f1a879797a3f9d9f91, type: 2}
@@ -50,11 +49,13 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 9ecd499ed3784476f85d276e5bae06af, type: 2}
   destructables:
   - {fileID: 142650, guid: 4b074952dc42241898c286f66078ac24, type: 2}
+  - {fileID: 164138, guid: 0c03a7b36453e4dd3be9be7ff58cf656, type: 2}
+  - {fileID: 188304, guid: e345b7a559a8b4e55b340872e079827f, type: 2}
   maxDestructablesInScene: 5
-  totalDestructables: 7
-  spawnDelay: 5
-  spawnHeight: 5
-  spawnRadius: .5
+  totalDestructables: 700
+  spawnDelay: 2
+  spawnHeight: 15
+  spawnRadius: 30
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

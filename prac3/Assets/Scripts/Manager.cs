@@ -7,10 +7,10 @@ public class Manager : MonoBehaviour {
 	public Material[] materials;
 	public GameObject[] destructables;
 	public int maxDestructablesInScene = 5;
-	public int totalDestructables = 7;
-	public float spawnDelay = 0.5f;
-	public float spawnHeight = 3.0f;
-	public float spawnRadius = 25.0f;
+	public int totalDestructables = 700;
+	public float spawnDelay = 2.0f;
+	public float spawnHeight = 15.0f;
+	public float spawnRadius = 30.0f;
 
 	int destroyed = 0;
 	int deployed = 0;
@@ -53,8 +53,8 @@ public class Manager : MonoBehaviour {
 	}
 
 	void spawnDestructable(){
-		int destrIndex = Random.Range (0, destructables.Length-1);
-		int matIndex = Random.Range (0, materials.Length-1);
+		int destrIndex = Random.Range (0, destructables.Length);
+		int matIndex = Random.Range (0, materials.Length);
 
 		Vector3 centre = player.transform.position;
 		float[] randCoords = {
