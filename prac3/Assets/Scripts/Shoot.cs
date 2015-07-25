@@ -10,11 +10,13 @@ public class Shoot : MonoBehaviour {
 
 	float lastShot = 0.0f;
 
+	AudioSource shotSound;
 	ParticleSystem muzzleFlash;
 	LineRenderer shotLine;
 
 	// Use this for initialization
 	void Start () {
+		shotSound = GetComponent <AudioSource> ();
 		muzzleFlash = GetComponent <ParticleSystem> ();
 		shotLine = GetComponent <LineRenderer> ();
 	}
@@ -46,6 +48,8 @@ public class Shoot : MonoBehaviour {
 		//Debug.Log ("shot");
 		muzzleFlash.Stop ();
 		muzzleFlash.Play ();
+
+		shotSound.Play ();
 
 		shotLine.enabled = true;
 		shotLine.SetPosition (0, transform.position);
