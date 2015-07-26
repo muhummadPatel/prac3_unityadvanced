@@ -1,16 +1,24 @@
-﻿using UnityEngine;
+﻿/*
+ * This script switches between the three cameras in the scene, viz. FPV camera, third-person
+ * camera, and orbit camera. The player input script will tell this script when to toggle between
+ * thge available cameras. This script keeps references to each of the camera gameobjects in 
+ * the scene.
+ * 
+ * 27-July-2015
+ * Muhummad Patel	PTLMUH006
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class PlayerView : MonoBehaviour {
 
-	//change this to private for final build
-	public int view;
-
 	public float heightStep = 0.5f;
 	public float radiusStep = 0.5f;
 
-	GameObject[] cams;
-	OrbitingCamera orbitController;
+	int view = 1; //current view/active camera
+	GameObject[]  cams; //references to all the cameras in the scene
+	OrbitingCamera orbitController; //orbitController script so we can change the params of the orbit cam
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +43,8 @@ public class PlayerView : MonoBehaviour {
 		cams[view].tag = "MainCamera";
 	}
 
+	//called by the player input script when the player asks to toggle cams.
+	//increments the view variable (wraps around when it goes out of bounds).
 	public void toggleViews (){
 		view++;
 
@@ -43,11 +53,13 @@ public class PlayerView : MonoBehaviour {
 		}
 	}
 
+	//Changes the orbitCam height either up or down based on whether direction is a +ve or -ve value
 	public void adjustOrbitCamHeight(int direction) {
 		direction = direction / Mathf.Abs(direction);
 		orbitController.adjustHeight (direction * heightStep);
 	}
 
+	//Changes the orbitCam radius either up or down based on whether direction is a +ve or -ve value
 	public void adjustOrbitCamRadius (int direction) {
 		direction = direction / Mathf.Abs(direction);
 		orbitController.adjustRadius (direction * radiusStep);

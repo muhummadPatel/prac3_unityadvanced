@@ -1,14 +1,25 @@
-﻿using UnityEngine;
+﻿/*
+ * This script Handles all player input. All player keypresses are picked up 
+ * here and the relevant action is then performed. This is often farmed out 
+ * to the appropriate scripts. Eg. the V keypress is picked up by this script
+ * which then informs the playerView script to switch to the next camera view.
+ * Player input is also interpreted and sent to the playerMovement script to
+ * move the player around the game world.
+ * 
+ * 27-July-2015
+ * Muhummad Patel	PTLMUH006
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class PlayerInput : MonoBehaviour {
 
-	Vector3 movement;
 	Manager manager;
-	//Animator anim;
+	bool paused = false;
+
 	PlayerMovement playerMovement;
 	PlayerView playerView;
-	bool paused = false;
 
 	void Start() {
 		GameObject managerObject = GameObject.FindGameObjectWithTag ("Manager");
@@ -18,27 +29,25 @@ public class PlayerInput : MonoBehaviour {
 		playerView = GetComponent <PlayerView> ();
 	}
 
-	// Update is called once per frame
-//	void Update () {
-//		Vector3 rot = new Vector3(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
-//		rot += transform.rotation.eulerAngles;
-//		transform.rotation = Quaternion.Euler(rot);
-//	}
-	
 	void Update() {
 		
 		if (Input.GetKeyUp (KeyCode.H)) {
-			paused =! paused;
+			//Show/hide help screen
+			paused = !paused;
 			manager.toggleHelpScreen(paused);
 		}
 
+		//only get this input when the game is NOT in a paused state
 		if (!paused) {
+			//get movement input
 			float h = Input.GetAxisRaw ("Horizontal");
 			float v = Input.GetAxisRaw ("Vertical");
 
+			playerMovement.move (h, v);
+
 			if (Input.GetKeyUp (KeyCode.V)) {
+				//switch camera views
 				playerView.toggleViews ();
-				//Debug.Log ("Pressed");
 			}
 
 			if (Input.GetKey (KeyCode.Period)) {
@@ -58,10 +67,9 @@ public class PlayerInput : MonoBehaviour {
 			}
 
 			if (Input.GetKeyUp (KeyCode.R)) {
+				//restart the scene
 				manager.restart ();
 			}
-
-			playerMovement.move (h, v);
 		}
 	}
 }
