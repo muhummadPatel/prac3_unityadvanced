@@ -30,6 +30,10 @@ public class PlayerInput : MonoBehaviour {
 	}
 
 	void Update() {
+
+		if (Input.GetKey("escape")) {
+			Application.Quit();
+		}
 		
 		if (Input.GetKeyUp (KeyCode.H)) {
 			//Show/hide help screen

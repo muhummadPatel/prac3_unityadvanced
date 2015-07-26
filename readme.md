@@ -7,7 +7,7 @@
 
 
 ###Submission:
-Included in this submission is the Unity project folder (prac3UnityAdvanced) and a 
+Included in this submission is the Unity project folder (prac3) and a 
 folder containing builds of the game for windows and linux (Builds). (Note the
 local git repository can be found in the unity project folder). Should you have
 any questions regarding this submission, please feel free to contact me on 
@@ -25,7 +25,7 @@ muhummad.patel@gmail.com. Hope you enjoy the game! :)
 * Decrease orbit camera distance: l
 * Restart scene and reset score: r
 * Show help screen: h
-* Quit: p
+* Quit: esc
 
 
 ###Description: 

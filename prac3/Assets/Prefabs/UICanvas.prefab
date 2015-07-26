@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8161d0a249fdc4cc99053537f917191a, type: 3}
-    m_FontSize: 14
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -301,7 +301,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "   Press R to restart\n   Press H for help"
+  m_Text: "   R to restart\n   H for help\n   esc to quit"
 --- !u!114 &11451544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -448,7 +448,9 @@ MonoBehaviour:
 
     restart
 
-    show this help screen'
+    show this help screen
+
+    quit'
 --- !u!114 &11451554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -475,7 +477,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: " wasd\n mouse\n left mouse btn\n v\n , (comma)\n . (full-stop)\n k\n l\n
-    r\n h"
+    r\n h\n esc"
 --- !u!222 &22251538
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -635,7 +637,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 86.8000031}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &22451544
 RectTransform:
@@ -724,8 +726,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: 108.75, y: -77}
-  m_SizeDelta: {x: 217.5, y: 222}
+  m_AnchoredPosition: {x: 108.800003, y: -77}
+  m_SizeDelta: {x: 217.5, y: 244}
   m_Pivot: {x: .5, y: 1}
 --- !u!224 &22451554
 RectTransform:
@@ -741,8 +743,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: 281, y: -77}
-  m_SizeDelta: {x: 127, y: 222}
+  m_AnchoredPosition: {x: 290.700012, y: -77}
+  m_SizeDelta: {x: 146.399994, y: 244}
   m_Pivot: {x: .5, y: 1}
 --- !u!225 &22551554
 CanvasGroup:
