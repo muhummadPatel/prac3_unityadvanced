@@ -1,9 +1,6 @@
 ##Practical 3 - _Unity3D: Advanced_
 
 
-[![Gameplay trailer](http://img.youtube.com/vi/slgxF9uK-7E/0.jpg)](https://www.youtube.com/watch?v=slgxF9uK-7E)
-
-
 **Author** : Muhummad Yunus Patel  
 **Student#** : PTLMUH006  
 **Date** : 27-July-2015  
@@ -14,6 +11,11 @@ Included in this submission is the Unity project folder (prac3). Note that the
 local git repository can be found in the unity project folder. Should you have
 any questions regarding this submission, please feel free to contact me on 
 muhummad.patel@gmail.com. Hope you enjoy the game! :)
+
+
+[![Gameplay trailer](http://img.youtube.com/vi/slgxF9uK-7E/0.jpg)](https://www.youtube.com/watch?v=slgxF9uK-7E)
+
+Click the image to watch a gameplay video.
 
 
 ###Controls:
